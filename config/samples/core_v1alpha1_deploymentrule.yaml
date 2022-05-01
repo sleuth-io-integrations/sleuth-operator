@@ -1,0 +1,6 @@
+apiVersion: core.sleuth.io/v1alpha1
+kind: DeploymentRule
+metadata:
+  name: deploymentrule-sample
+spec:
+  # TODO(user): Add fields here

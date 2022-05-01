@@ -1,0 +1,20 @@
+# permissions for end users to view deploymentrules.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: deploymentrule-viewer-role
+rules:
+- apiGroups:
+  - core.sleuth.io
+  resources:
+  - deploymentrules
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - core.sleuth.io
+  resources:
+  - deploymentrules/status
+  verbs:
+  - get

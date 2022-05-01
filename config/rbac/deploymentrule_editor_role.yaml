@@ -1,0 +1,24 @@
+# permissions for end users to edit deploymentrules.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: deploymentrule-editor-role
+rules:
+- apiGroups:
+  - core.sleuth.io
+  resources:
+  - deploymentrules
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - core.sleuth.io
+  resources:
+  - deploymentrules/status
+  verbs:
+  - get
