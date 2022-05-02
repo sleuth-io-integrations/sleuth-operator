@@ -17,19 +17,26 @@ limitations under the License.
 package v1alpha1
 
 import (
+	"k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
-
 // DeploymentRuleSpec defines the desired state of DeploymentRule
 type DeploymentRuleSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of DeploymentRule. Edit deploymentrule_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Environment defines the Sleuth Environment to register the deployment against
+	Environment string `json:"environment,omitempty"`
+	// WebhookUrl defines the Sleuth Webhook to register the deployment at
+	WebhookUrl string `json:"webhookUrl,omitempty"`
+	// ApiToken defines the location within a Kubernetes Secret for the Sleuth Webhook api token
+	ApiToken ApiToken `json:"apiToken,omitempty"`
+	// Selector defines which labels the rule is matching against in order to trigger a Sleuth deployment
+	Selector *metav1.LabelSelector `json:"selector,omitempty"`
+}
+
+type ApiToken struct {
+	SecretKeyRef *v1.SecretKeySelector `json:"secretKeyRef,omitempty"`
+	Value        *string               `json:"value,omitempty"`
 }
 
 // DeploymentRuleStatus defines the observed state of DeploymentRule

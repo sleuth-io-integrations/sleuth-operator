@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: creative-order
+  template:
+    metadata:
+      name: test
+      labels:
+        app: creative-order
+    spec:
+      containers:
+        - name: test
+          image: nginxdemos/hello
