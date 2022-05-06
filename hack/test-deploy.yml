@@ -6,12 +6,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: creative-order
+      app: test-123
   template:
     metadata:
       name: test
       labels:
-        app: creative-order
+        app: test-123
     spec:
       containers:
         - name: test
