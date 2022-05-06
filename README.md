@@ -24,7 +24,7 @@ kubectl config set-context kind-kind
 
 ## Makefile
 
-Test and initial build by simply running:
+Test an initial build by simply running:
 
 ```shell
 make
