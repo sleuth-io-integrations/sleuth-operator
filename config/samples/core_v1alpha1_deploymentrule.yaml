@@ -4,9 +4,10 @@ metadata:
   name: deploymentrule-sample
 spec:
   environment: production
-  webhookUrl: https://app.sleuth.io/api/1/deployments/shuttlerock-test/creative-order/register_deploy
+  webhookUrl: https://app.sleuth.io/api/1/deployments/sleuth/hello-world/register_deploy
   apiToken:
     value: 0f7f25b71c2902790c8575d97ab88c55f363439e
   selector:
     matchLabels:
-      app: test-123
+      sleuth-label: select-me
+      app: hello-world

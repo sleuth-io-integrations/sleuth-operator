@@ -3,15 +3,19 @@ kind: Deployment
 metadata:
   name: test
   namespace: default
+  labels:
+    sleuth-label: select-me
+    app: hello-world
+    sha: 111a
 spec:
   selector:
     matchLabels:
-      app: test-123
+      app: hello-world
   template:
     metadata:
       name: test
       labels:
-        app: test-123
+        app: hello-world
     spec:
       containers:
         - name: test
